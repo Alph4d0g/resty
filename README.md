@@ -1,51 +1,51 @@
-# Resty  [![Build Status](https://travis-ci.org/go-resty/resty.svg?branch=master)](https://travis-ci.org/go-resty/resty) [![codecov](https://codecov.io/gh/go-resty/resty/branch/master/graph/badge.svg)](https://codecov.io/gh/go-resty/resty/branch/master)  [![GoReport](https://goreportcard.com/badge/go-resty/resty)](https://goreportcard.com/report/go-resty/resty)  [![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/go-resty/resty/releases/latest)  [![GoDoc](https://godoc.org/github.com/go-resty/resty?status.svg)](https://godoc.org/github.com/go-resty/resty) [![License](https://img.shields.io/github/license/go-resty/resty.svg)](LICENSE)
+# Resty  [![Build Status](https://travis-ci.org/go-resty/resty.svg?branch=master)](https://travis-ci.org/go-resty/resty) [![codecov](https://codecov.io/gh/go-resty/resty/branch/master/graph/badge.svg)](https://codecov.io/gh/go-resty/resty/branch/master)  [![GoReport](https://goreportcard.com/badge/go-resty/resty)](https://goreportcard.com/report/go-resty/resty)  [![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://ALph4d0g/restry/releases/latest)  [![GoDoc](https://godoc.org/ALph4d0g/restry?status.svg)](https://godoc.org/ALph4d0g/restry) [![License](https://img.shields.io/github/license/go-resty/resty.svg)](LICENSE)
 
 Simple HTTP and REST client for Go inspired by Ruby rest-client. [Features](#features) section describes in detail about Resty capabilities.
 
-***v1.0 [released](https://github.com/go-resty/resty/releases/latest) and tagged on Sep 25, 2017.***
+***v1.0 [released](https://ALph4d0g/restry/releases/latest) and tagged on Sep 25, 2017.***
 
 *Since Go v1.6 HTTP/2 & HTTP/1.1 protocol is used transparently. `Resty` works fine with HTTP/2 and HTTP/1.1.*
 
 #### v1.0 Released
 
-Resty first version released on Sep 15, 2015 then it grew gradually as a very handy and helpful library. Its been a two years; `v1.0` released on Sep 25, 2017. I'm very thankful to Resty users and its [contributors](https://github.com/go-resty/resty/graphs/contributors).
+Resty first version released on Sep 15, 2015 then it grew gradually as a very handy and helpful library. Its been a two years; `v1.0` released on Sep 25, 2017. I'm very thankful to Resty users and its [contributors](https://ALph4d0g/restry/graphs/contributors).
 
 #### Features
   * GET, POST, PUT, DELETE, HEAD, PATCH and OPTIONS
   * Simple and chainable methods for settings and request
   * Request Body can be `string`, `[]byte`, `struct`, `map`, `slice` and `io.Reader` too
     * Auto detects `Content-Type`
-  * [Response](https://godoc.org/github.com/go-resty/resty#Response) object gives you more possibility
+  * [Response](https://godoc.org/ALph4d0g/restry#Response) object gives you more possibility
     * Access as `[]byte` array - `response.Body()` OR Access as `string` - `response.String()`
     * Know your `response.Time()` and when we `response.ReceivedAt()`
   * Automatic marshal and unmarshal for `JSON` and `XML` content type
     * Default is `JSON`, if you supply `struct/map` without header `Content-Type`
     * For auto-unmarshal, refer to -
-        - Success scenario [Request.SetResult()](https://godoc.org/github.com/go-resty/resty#Request.SetResult) and [Response.Result()](https://godoc.org/github.com/go-resty/resty#Response.Result).
-        - Error scenario [Request.SetError()](https://godoc.org/github.com/go-resty/resty#Request.SetError) and [Response.Error()](https://godoc.org/github.com/go-resty/resty#Response.Error).
+        - Success scenario [Request.SetResult()](https://godoc.org/ALph4d0g/restry#Request.SetResult) and [Response.Result()](https://godoc.org/ALph4d0g/restry#Response.Result).
+        - Error scenario [Request.SetError()](https://godoc.org/ALph4d0g/restry#Request.SetError) and [Response.Error()](https://godoc.org/ALph4d0g/restry#Response.Error).
   * Easy to upload one or more file(s) via `multipart/form-data`
   * Backoff Retry Mechanism with retry condition function [reference](retry_test.go)
-  * resty client HTTP & REST [Request](https://godoc.org/github.com/go-resty/resty#Client.OnBeforeRequest) and [Response](https://godoc.org/github.com/go-resty/resty#Client.OnAfterResponse) middlewares
+  * resty client HTTP & REST [Request](https://godoc.org/ALph4d0g/restry#Client.OnBeforeRequest) and [Response](https://godoc.org/ALph4d0g/restry#Client.OnAfterResponse) middlewares
   * `Request.SetContext` supported `go1.7` and above
   * Authorization option of `BasicAuth` and `Bearer` token
   * Set request `ContentLength` value for all request or particular request
   * Choose between HTTP and REST mode. Default is `REST`
     * `HTTP` - default up to 10 redirects and no automatic response unmarshal
     * `REST` - defaults to no redirects and automatic response marshal/unmarshal for `JSON` & `XML`
-  * Custom [Root Certificates](https://godoc.org/github.com/go-resty/resty#Client.SetRootCertificate) and Client [Certificates](https://godoc.org/github.com/go-resty/resty#Client.SetCertificates)
-  * Download/Save HTTP response directly into File, like `curl -o` flag. See [SetOutputDirectory](https://godoc.org/github.com/go-resty/resty#Client.SetOutputDirectory) & [SetOutput](https://godoc.org/github.com/go-resty/resty#Request.SetOutput).
+  * Custom [Root Certificates](https://godoc.org/ALph4d0g/restry#Client.SetRootCertificate) and Client [Certificates](https://godoc.org/ALph4d0g/restry#Client.SetCertificates)
+  * Download/Save HTTP response directly into File, like `curl -o` flag. See [SetOutputDirectory](https://godoc.org/ALph4d0g/restry#Client.SetOutputDirectory) & [SetOutput](https://godoc.org/ALph4d0g/restry#Request.SetOutput).
   * Cookies for your request and CookieJar support
   * SRV Record based request instead of Host URL
   * Client settings like `Timeout`, `RedirectPolicy`, `Proxy`, `TLSClientConfig`, `Transport`, etc.
-  * Optionally allows GET request with payload, see [SetAllowGetMethodPayload](https://godoc.org/github.com/go-resty/resty#Client.SetAllowGetMethodPayload)
-  * Supports registering external JSON library into resty, see [how to use](https://github.com/go-resty/resty/issues/76#issuecomment-314015250)
-  * Exposes Response reader without reading response (no auto-unmarshaling) if need be, see [how to use](https://github.com/go-resty/resty/issues/87#issuecomment-322100604)
-  * Option to specify expected `Content-Type` when response `Content-Type` header missing. Refer to [#92](https://github.com/go-resty/resty/issues/92)
+  * Optionally allows GET request with payload, see [SetAllowGetMethodPayload](https://godoc.org/ALph4d0g/restry#Client.SetAllowGetMethodPayload)
+  * Supports registering external JSON library into resty, see [how to use](https://ALph4d0g/restry/issues/76#issuecomment-314015250)
+  * Exposes Response reader without reading response (no auto-unmarshaling) if need be, see [how to use](https://ALph4d0g/restry/issues/87#issuecomment-322100604)
+  * Option to specify expected `Content-Type` when response `Content-Type` header missing. Refer to [#92](https://ALph4d0g/restry/issues/92)
   * Resty design
     * Have client level settings & options and also override at Request level if you want to
     * Request and Response middlewares
     * Create Multiple clients if you want to `resty.New()`
-    * Supports `http.RoundTripper` implementation, see [SetTransport](https://godoc.org/github.com/go-resty/resty#Client.SetTransport)
+    * Supports `http.RoundTripper` implementation, see [SetTransport](https://godoc.org/ALph4d0g/restry#Client.SetTransport)
     * goroutine concurrent safe
     * REST and HTTP modes
     * Debug mode - clean and informative logging presentation
@@ -64,7 +64,7 @@ resty tested with Go `v1.3` and above.
     * Backoff Retry
     * Conditional Retry
   * SRV Record based request instead of Host URL [how to use](resty_test.go#L1412)
-  * etc (upcoming - throw your idea's [here](https://github.com/go-resty/resty/issues)).
+  * etc (upcoming - throw your idea's [here](https://ALph4d0g/restry/issues)).
 
 ## Installation
 #### Stable Version - Production Ready
@@ -76,7 +76,7 @@ go get -u gopkg.in/resty.v1
 #### Latest Version - Development Edge
 ```sh
 # install the latest & greatest library
-go get -u github.com/go-resty/resty
+go get -u ALph4d0g/restry
 ```
 
 ## It might interest you :)
@@ -119,7 +119,7 @@ Response Body: {
   "headers": {
     "Accept-Encoding": "gzip",
     "Host": "httpbin.org",
-    "User-Agent": "go-resty v0.1 - https://github.com/go-resty/resty"
+    "User-Agent": "go-resty v0.1 - https://ALph4d0g/restry"
   },
   "origin": "0.0.0.0",
   "url": "http://httpbin.org/get"
@@ -634,7 +634,7 @@ BTW, I'd like to know what you think about `Resty`. Kindly open an issue or send
 [Jeevanandam M.](https://github.com/jeevatkm) (jeeva@myjeeva.com)
 
 ## Contributors
-Have a look on [Contributors](https://github.com/go-resty/resty/graphs/contributors) page.
+Have a look on [Contributors](https://ALph4d0g/restry/graphs/contributors) page.
 
 ## License
 Resty released under MIT license, refer [LICENSE](LICENSE) file.
