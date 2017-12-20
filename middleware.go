@@ -141,6 +141,9 @@ func createHTTPRequest(c *Client, r *Request) (err error) {
 	// Assign close connection option
 	r.RawRequest.Close = c.closeConnection
 
+	// Delete Gzip HEADERS
+	r.RawRequest.Header.Del("Accept-Encoding")
+
 	// Add headers into http request
 	r.RawRequest.Header = r.Header
 
