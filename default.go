@@ -259,7 +259,6 @@ func IsProxySet() bool {
 
 // GetClient method returns the current `http.Client` used by the default resty client.
 func GetClient() *http.Client {
-    return DefaultClient.httpClient
 }
 
 //‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
@@ -288,6 +287,7 @@ func createClient(hc *http.Client) *Client {
 
 	// Default transport
 	c.SetTransport(&http.Transport{})
+	c.SetTransport(&http.Transport{DisableCompression: true})
 
 	// Default redirect policy
 	c.SetRedirectPolicy(NoRedirectPolicy())
